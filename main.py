@@ -1,19 +1,18 @@
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
+class Person():
+    def p(self):
+        self.a = 11
+        print(self.a)
 
-This is a temporary script file.
-"""
+    def __call__(self, n):
+        print("n = ", n)
+# p = Person()
+# p.p()
+# p(34)
 
 import torch
-import matplotlib.pyplot as plt
 
-#linspace 在-1到1之间，均匀生成100个数
-#unsqueeze 把一维数据变为二维数据
-x = torch.unsqueeze(torch.linspace(-1, 1, 100), dim=1)
-y = x.pow(2) + 0.2*torch.rand(x.size())                 # noisy y data (tensor), shape=(100, 1)
-
-
-# 画图
-plt.scatter(x.data.numpy(), y.data.numpy())
-plt.show()
+a = [[[1,2,3],[4,15,6]],[[7,8,9],[10,11,12]]]
+a = torch.Tensor(a)
+print(a)
+a = torch.max(a,0)
+print(a)
